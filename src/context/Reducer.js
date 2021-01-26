@@ -6,11 +6,7 @@ const Reducer =  (state, action) => {
                 transaction: [action.payload, ...state.transaction]
             }
         case 'DELETE_TRANSACTION':
-                return {
-                    ...state,
-                    transaction: (state.transaction || [])
-                        .filter(transaction => transaction.id !== action.payload)
-                }
+                return{transaction: state.transaction.filter((item) => item.id !== action.id)}
         default:
             return state;
     };

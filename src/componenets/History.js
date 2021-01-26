@@ -10,6 +10,7 @@ import { GlobalContext } from '../context/GlobalState';
 const History = () => {
 
     const { transaction } = useContext(GlobalContext);
+    const {delTransaction} = useContext(GlobalContext);
     
 
     return (
@@ -19,11 +20,12 @@ const History = () => {
             </h3>
             <ul className="list">
                {transaction.map((obj) => {
-                   return(<li >
-                        <span>{obj.description}</span>
-                        <span>{obj.amount}</span>
-                        <span>{obj.type.selectedOption}</span>
-                        
+                   return(
+                   <li key={obj.id}>
+                       <span>{obj.description}</span>
+                       <span>{obj.amount}</span>
+                       <span>{obj.type.selectedOption}</span>
+                       <button onClick={() => delTransaction(obj.id)}>X</button>                         
                    </li>
 
                    )
