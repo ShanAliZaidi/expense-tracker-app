@@ -21,6 +21,6 @@ jobs:
       - name: Install Surge
         run: npm install -g surge
       - name: Run surge
-        run: surge ./build expense_tracker-by_Shan.surge.sh --token ${{ secrets.NEWTOKEN }}
+        run: surge ./build expense_tracker-by_Shan.surge.sh --token ${{ secrets.SURGE_TOKEN }}
 
           
